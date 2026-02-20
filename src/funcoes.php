@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../public/Genero.php';
+require_once __DIR__ . '/../public/modelo/Genero.php';
 //require_once __DIR__ . '/public/modelo/Filme.php';
 require_once __DIR__ . '/../public/modelo/Filmes.php';
 

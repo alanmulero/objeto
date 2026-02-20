@@ -1,23 +1,37 @@
 <?php
 
-class Filmes extends Titulo{
+class Serie extends Titulo{
 
-    
 
     public function __construct(
-
         string $nome,
         int $anoLancamento,
         Genero $genero,
-        public readonly float $duracaoMinutos,
-        
+        public readonly int $temporadas,
+        public readonly int $episodiosPorTemporada,
+        public readonly int $minutosPorTemporada
+
 
     )
     {
         parent::__construct($nome,$anoLancamento,$genero);
     }
 
-    
+
+
+
+
+
+
+
+
 
 
 }
+
+
+
+
+
+
+?>
