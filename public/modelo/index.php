@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/../Genero.php';
 require_once __DIR__ . '/Filmes.php';
 require_once __DIR__ . '/../../src/funcoes.php';
 
@@ -16,7 +16,15 @@ require_once __DIR__ . '/../../src/funcoes.php';
 <body>
     <h1>Filme Registrado com Sucesso!</h1>
     <?php
-    $novoFilme = new Filmes($_POST['nome'] ?? 'Não Informado', $_POST['anoLancamento'] ?? 0, $_POST['genero'] ?? '', $_POST['nota'] ?? 0.0);
+    $generoEnum = match($_POST['genero'] ?? '') {
+        'Ação' => Genero::Acao,
+        'Comédia' => Genero::Comedia,
+        'Terror' => Genero::Terror,
+        'Super-Herói' => Genero::SuperHeroi,
+        'Drama' => Genero::Drama,
+        default => Genero::Acao,
+    };
+    $novoFilme = new Filmes($_POST['nome'] ?? 'Não Informado', $_POST['anoLancamento'] ?? 0, $generoEnum, $_POST['nota'] ?? 0.0);
     imprimeFilme($novoFilme);
     ?>
 
