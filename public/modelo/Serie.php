@@ -1,6 +1,6 @@
 <?php
 
-class Serie extends Titulo{
+class Serie extends Titulo implements CalculadoraDeMarattona{
 
 
     public function __construct(
@@ -18,7 +18,27 @@ class Serie extends Titulo{
     }
 
 
+      public function incluiTitulo(Titulo $titulo): float
+    {
+        return $titulo->nota +=6;
+    }
 
+
+        public function alteraPreco(Titulo $preco): float
+    {
+        $impostoSerie = parent::$imposto += 4.7;
+        return $this->$preco + $impostoSerie;
+    }
+
+ 
+
+    public function getDuracaoMinutos(): int
+    {
+        return $this->temporadas * $this->episodiosPorTemporada * $this->minutosPorTemporada;
+    }
+
+
+    
 
 
 

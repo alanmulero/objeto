@@ -2,7 +2,7 @@
 
 class Titulo
 {
-
+    protected float $imposto = 8.1;
     public array $somaNotas;
 
     public function __construct(
@@ -10,11 +10,14 @@ class Titulo
         public readonly string  $nome,
         public readonly int $anoLancamento,
         public readonly Genero $genero,
-        public float $nota = 0.0
+        public float $nota = 0.0,
+        private float $preco 
 
     ) {
         $this->somaNotas = [$nota];
     }
+
+    
 
 
 
@@ -38,4 +41,24 @@ class Titulo
             return $this->totalNotas() / count($this->somaNotas);
         }
     }
+
+        /**
+         * Get the value of duracaoMinutos
+         */ 
+        public function getPreco()
+        {
+                return $this->preco;
+        }
+
+        /**
+         * Set the value of duracaoMinutos
+         *
+         * @return  self
+         */ 
+        public function setPreco($preco)
+        {
+                $this->preco = $preco;
+
+                
+        }
 }

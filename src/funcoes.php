@@ -4,7 +4,7 @@ require_once __DIR__ . '/../public/modelo/Genero.php';
 //require_once __DIR__ . '/public/modelo/Filme.php';
 require_once __DIR__ . '/../public/modelo/Filmes.php';
 
-$matrix = new Filmes('Matrix', 2000, Genero::Acao, 10.0);
+$matrix = new Filmes('Matrix', 2000, Genero::Acao, 10.0, 20.0);
 
 function imprimeFilme(Filmes $filme): Filmes
 {

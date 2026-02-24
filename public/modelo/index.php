@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/Genero.php';
-require_once __DIR__ .'/Titulo.php';
+require_once __DIR__ . '/Titulo.php';
+require_once __DIR__ . '/../../src/calculos/CalculadoraDeMarattona.php';
 require_once __DIR__ . '/Serie.php';
 require_once __DIR__ . '/Filmes.php';
 require_once __DIR__ . '/../../src/funcoes.php';
@@ -37,6 +38,13 @@ require_once __DIR__ . '/../../src/funcoes.php';
 echo $novoFilme->totalNotas();
 echo "<br>";
 echo $novoFilme->media();
+echo "<br>";
+echo "<h3> Resultados dos implements. </h3>";
+echo "<br>";
+echo "Filmes:".PHP_EOL;
+echo $novoFilme->incluiTitulo($novoFilme).PHP_EOL;
+echo $novoFilme->alteraPreco($novoFilme).PHP_EOL;
+
 ?>
     <br><a href="../index.html">Voltar ao formulário</a>
 </body>
